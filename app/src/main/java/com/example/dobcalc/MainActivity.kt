@@ -22,10 +22,8 @@ class MainActivity : AppCompatActivity() {
         tvSelectedDate = findViewById(R.id.tvSelectedDate)
         tvAgeInMinutes = findViewById(R.id.tvAgeInMinutes)
 
-        btnDatePicker.setOnClickListener { view ->
-
+        btnDatePicker.setOnClickListener {
             clickDatePicker()
-
         }
     }
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         val dpd = DatePickerDialog(
             this,
-            DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
+            { _, selectedYear, selectedMonth, selectedDayOfMonth ->
                 Toast.makeText(
                     this,
                     "Year was $selectedYear, month was ${selectedMonth + 1}, day of month was $selectedDayOfMonth",
